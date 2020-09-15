@@ -20,7 +20,7 @@ EOF
 #openssl x509 -req -in ${domainName}.csr -CA ${caFileName}.pem -CAkey ${caFileName}.key -CAcreateserial -out ${domainName}.crt -days 1825 -sha256 -addext "subjectAltName=DNS:${domainName}"
 #but for openssl < 1.1
 stty -echo 
-openssl x509 -req -in ${domainName}.csr -CA ${caFileName}.pem -CAkey ${caFileName}.key -CAcreateserial -out ${domainName}.crt -days 1825 -sha256 -extfile ${domainName}.cnf
+openssl x509 -req -in ${domainName}.csr -CA ${caFileName}.pem -CAkey ${caFileName}.key -CAcreateserial -out ${domainName}.crt -days 100 -sha256 -extfile ${domainName}.cnf
 stty echo 
 #cleanup
 rm ${domainName}.cnf
